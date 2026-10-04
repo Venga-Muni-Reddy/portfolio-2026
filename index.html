@@ -75,7 +75,7 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 .mdl .row{display:flex;gap:10px}.mdl .row .btn{flex:1;text-align:center;cursor:pointer;border:0;font:inherit;font-weight:600;padding:11px 14px}.mdl .row .btn.ghost{border:1px solid var(--bd)}
 .mdl .msg{min-height:1.2em;font-size:.88rem;margin:0 0 10px;color:var(--c)}.mdl .msg.err{color:#ff7b8a}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);opacity:0;z-index:300;background:#0e1326;border:1px solid var(--c);color:var(--fg);padding:12px 18px;border-radius:12px;font-size:.92rem;max-width:90vw;text-align:center;transition:.35s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:640px){.nav nav a.navdl{display:none}}
+@media(max-width:640px){.cta .btn.ghost{width:calc(50% - 7px);padding:12px 8px}}@media(max-width:640px){.nav nav a.navdl{display:none}}
 </style></head><body>
 <div id="bar"></div>
 <header class="nav"><a class="logo" href="#top">SVM</a>
@@ -128,6 +128,7 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 <p class="small">Kadapa, Andhra Pradesh, India</p></section>
 </main>
 <footer>&copy; 2026 Saribala Venga Muni Reddy <button class="upl" id="uplbtn" type="button">Update resume</button></footer>
+<div class="mdl" id="mdl" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="box"><h3 id="mt">Update resume</h3><p id="mp">Enter the access code to upload a new resume.</p><div id="s1"><input type="password" id="code" placeholder="Access code" autocomplete="off"><div class="msg" id="m1"></div><div class="row"><button class="btn" id="go">Continue</button><button class="btn ghost" data-close>Cancel</button></div></div><div id="s2" hidden><input type="file" id="file" accept="application/pdf,.pdf"><div class="msg" id="m2"></div><div class="row"><button class="btn" id="up">Upload PDF</button><button class="btn ghost" data-close>Close</button></div></div></div></div><div class="toast" id="toast" role="status"></div>
 <script>
 (function(){
 var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -169,5 +170,4 @@ $('go').addEventListener('click',chk);$('code').addEventListener('keydown',funct
 $('up').addEventListener('click',function(){var f=$('file').files[0];if(!f){say('m2','Pick a PDF first.',1);return}if(f.size>4*1024*1024){say('m2','File is over 4 MB.',1);return}if(!/\.pdf$/i.test(f.name)&&f.type!=='application/pdf'){say('m2','PDF files only.',1);return}say('m2','Uploading...');fetch('/api/upload',{method:'POST',headers:{'x-upload-code':code,'Content-Type':'application/pdf'},body:f}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j.error||'failed';return j})}).then(function(){close();toast('Resume updated. The Download button now serves it.')}).catch(function(e){say('m2',String(e),1)})});
 })();
 </script>
-<div class="mdl" id="mdl" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="box"><h3 id="mt">Update resume</h3><p id="mp">Enter the access code to upload a new resume.</p><div id="s1"><input type="password" id="code" placeholder="Access code" autocomplete="off"><div class="msg" id="m1"></div><div class="row"><button class="btn" id="go">Continue</button><button class="btn ghost" data-close>Cancel</button></div></div><div id="s2" hidden><input type="file" id="file" accept="application/pdf,.pdf"><div class="msg" id="m2"></div><div class="row"><button class="btn" id="up">Upload PDF</button><button class="btn ghost" data-close>Close</button></div></div></div></div><div class="toast" id="toast" role="status"></div>
 </body></html>
