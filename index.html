@@ -3,53 +3,141 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Saribala Venga Muni Reddy | Software Engineer</title>
 <meta name="description" content="Full-stack software engineer (Python, FastAPI, Java, Spring Boot, React). SDE-1 at Adifice Technologies. B.Tech CSE, RGUKT.">
-<link rel="stylesheet" href="style.css">
-</head><body>
+<meta name="theme-color" content="#060914"><style>
+:root{--bg:#060914;--fg:#e8ecf8;--mut:#9aa4c4;--a:#6ea8ff;--b:#b36bff;--c:#35e0c2;--card:rgba(18,24,48,.55);--bd:rgba(130,150,255,.18)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:-20%;z-index:-1;background:radial-gradient(40% 40% at 20% 20%,rgba(110,168,255,.22),transparent 70%),radial-gradient(35% 35% at 80% 30%,rgba(179,107,255,.2),transparent 70%),radial-gradient(40% 40% at 50% 90%,rgba(53,224,194,.14),transparent 70%);animation:drift 22s ease-in-out infinite alternate;will-change:transform}
+@keyframes drift{to{transform:translate3d(4%,3%,0) scale(1.1) rotate(4deg)}}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--a),var(--b),var(--c));z-index:100}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 6vw;background:rgba(6,9,20,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.logo{font-weight:800;letter-spacing:.08em;color:var(--a);text-decoration:none}
+.nav nav{display:flex;gap:22px}.nav nav a{color:var(--mut);text-decoration:none;font-size:.92rem;position:relative;transition:color .25s}
+.nav nav a:after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:linear-gradient(90deg,var(--a),var(--b));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav nav a:hover{color:#fff}.nav nav a:hover:after{transform:scaleX(1)}
+main{max-width:1080px;margin:0 auto;padding:0 6vw}
+section{padding:90px 0 20px}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:26px;display:inline-block;background:linear-gradient(90deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent;position:relative}
+h2:after{content:"";display:block;height:3px;width:44px;margin-top:8px;border-radius:3px;background:linear-gradient(90deg,var(--a),var(--b),var(--c));animation:wide 3s ease-in-out infinite alternate}
+@keyframes wide{to{width:100%}}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 60px}
+#fx{position:absolute;inset:0 -6vw;width:calc(100% + 12vw);height:100%;z-index:-1;pointer-events:none}
+.eyebrow{color:var(--c);letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;margin-bottom:8px}
+h1{font-size:clamp(2.3rem,8vw,4.8rem);line-height:1.08;font-weight:800;margin-bottom:14px}
+.grad{background:linear-gradient(100deg,#fff 0%,var(--a) 35%,var(--b) 65%,var(--c) 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite alternate}
+@keyframes shine{to{background-position:100% 0}}
+.typed{font-size:clamp(1.15rem,3.2vw,1.7rem);color:#dfe6ff;min-height:2.2em;margin-bottom:6px}.typed #typed{color:var(--a);font-weight:600}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--c);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+.tag{color:var(--mut);max-width:620px;margin-bottom:26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;background:linear-gradient(120deg,var(--a),var(--b));color:#fff;text-decoration:none;font-weight:600;box-shadow:0 8px 30px -8px rgba(110,168,255,.7);transition:transform .25s,box-shadow .25s;word-break:break-word}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px -8px rgba(179,107,255,.8)}
+.btn.ghost{background:transparent;border:1px solid var(--bd);box-shadow:none;color:var(--fg)}.btn.ghost:hover{border-color:var(--a);background:rgba(110,168,255,.1)}
+.stats{list-style:none;display:flex;flex-wrap:wrap;gap:14px}
+.stats li{padding:14px 20px;border:1px solid var(--bd);border-radius:14px;background:var(--card);backdrop-filter:blur(8px);transition:transform .3s,border-color .3s}.stats li:hover{transform:translateY(-4px);border-color:var(--c)}
+.stats b{display:block;font-size:1.6rem;color:#fff}.stats span{color:var(--mut);font-size:.82rem}
+.scroll{position:absolute;bottom:24px;left:50%;width:24px;height:38px;margin-left:-12px;border:2px solid var(--bd);border-radius:14px}.scroll span{position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:3px;background:var(--c);animation:dot 1.8s infinite}
+@keyframes dot{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+p{color:#c5cde6}#about p{margin-bottom:14px;max-width:760px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{--mx:50%;--my:50%;position:relative;padding:22px;border:1px solid var(--bd);border-radius:18px;background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;transform-style:preserve-3d}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(110,168,255,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:rgba(110,168,255,.55);box-shadow:0 20px 50px -20px rgba(110,168,255,.5)}.card:hover:before{opacity:1}
+.card h3{font-size:1.12rem;margin-bottom:10px;color:#fff;position:relative}.card p{position:relative}
+.proj .card{display:flex;flex-direction:column;gap:12px}.proj .card p{flex:1 1 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:5px 12px;border-radius:99px;font-size:.82rem;background:rgba(110,168,255,.1);border:1px solid var(--bd);color:#cfdcff;transition:transform .25s,background .25s,border-color .25s}
+.chips span:hover{transform:translateY(-3px) scale(1.06);background:rgba(179,107,255,.2);border-color:var(--b)}
+.badge{position:absolute;top:16px;right:16px;font-size:.72rem;padding:3px 10px;border-radius:99px;background:rgba(53,224,194,.15);color:var(--c);border:1px solid rgba(53,224,194,.4)}.badge.alt{background:rgba(179,107,255,.15);color:#d6b0ff;border-color:rgba(179,107,255,.4)}
+.badge:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:6px;animation:pulse 1.6s infinite}@keyframes pulse{50%{opacity:.25;transform:scale(1.6)}}
+.link{position:relative;align-self:flex-start;color:var(--a);text-decoration:none;font-weight:600;padding:4px 0;transition:letter-spacing .25s,color .25s}.link:hover{color:#fff;letter-spacing:.03em}
+.tl{position:relative;padding-left:26px;border-left:2px solid transparent;border-image:linear-gradient(var(--a),var(--b),transparent) 1}
+.item{position:relative;margin-bottom:28px;padding:20px;border:1px solid var(--bd);border-radius:16px;background:var(--card);transition:transform .3s,border-color .3s}.item:hover{transform:translateX(6px);border-color:var(--a)}
+.item:before{content:"";position:absolute;left:-35px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--c);box-shadow:0 0 14px var(--c)}
+.when{color:var(--c);font-size:.85rem;margin-bottom:4px}.org{color:var(--a);margin-bottom:10px}.item ul{padding-left:18px;color:#c5cde6}.item li{margin-bottom:6px}
+.contact{text-align:center;padding-bottom:70px}.contact p{margin:0 auto 22px;max-width:560px}.contact .cta{justify-content:center}.small{color:var(--mut);font-size:.9rem}
+footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(--bd);font-size:.88rem}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
+.card.rv.in{transition:opacity .8s ease var(--d,0s),transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+@media(max-width:640px){.nav{padding:10px 4vw}.nav nav{gap:13px}.nav nav a{font-size:.8rem}.nav nav a[href="#about"],.nav nav a[href="#skills"]{display:none}section{padding-top:64px}.hero{padding-top:90px}.scroll{display:none}.stats li{flex:1 1 40%;padding:12px 14px}.item:before{left:-33px}.btn{width:100%;text-align:center}.tl{padding-left:20px}.item:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style></head><body>
+<div id="bar"></div>
 <header class="nav"><a class="logo" href="#top">SVM</a>
 <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav></header>
 <main id="top">
-<section class="hero">
+<section class="hero"><canvas id="fx" aria-hidden="true"></canvas>
 <p class="eyebrow">Hi, I'm</p>
-<h1>Saribala Venga Muni Reddy</h1>
+<h1><span class="grad">Saribala Venga Muni Reddy</span></h1>
+<p class="typed">I build <span id="typed"></span><i class="caret"></i></p>
 <p class="tag">Full-stack software engineer building backend APIs, payments and AI-powered apps with Python, Java and React.</p>
 <div class="cta"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Get in touch</a></div>
-<ul class="stats"><li><b>9.0</b><span>B.Tech CGPA</span></li><li><b>400+</b><span>LeetCode solved</span></li><li><b>SDE-1</b><span>Adifice Technologies</span></li></ul>
+<ul class="stats"><li><b data-n="9.0" data-d="1">9.0</b><span>B.Tech CGPA</span></li><li><b data-n="400" data-s="+">400+</b><span>LeetCode solved</span></li><li><b>SDE-1</b><span>Adifice Technologies</span></li></ul>
+<a class="scroll" href="#about" aria-label="Scroll down"><span></span></a>
 </section>
 
-<section id="about"><h2>About</h2>
-<p>I'm a 2026 Computer Science graduate and a working SDE-1 based in Kadapa, Andhra Pradesh. At Adifice Technologies I build FastAPI and PostgreSQL backends, including booking, payment and refund flows with Stripe. I also build with Java and Spring Boot, React and Node.js, and I'm interested in LLM apps using RAG and agent workflows.</p>
+<section id="about"><h2 class="rv">About</h2>
+<p class="rv">I'm a 2026 Computer Science graduate and a working SDE-1 based in Kadapa, Andhra Pradesh. At Adifice Technologies I build FastAPI and PostgreSQL backends, including booking, payment and refund flows with Stripe. I also build with Java and Spring Boot, React and Node.js, and I'm interested in LLM apps using RAG and agent workflows.</p>
 <p>I work in Git feature branches with pull requests and code reviews, and I like shipping things that real people use.</p></section>
 
-<section id="skills"><h2>Skills</h2><div class="grid skills">
-<div class="card"><h3>Backend</h3><p class="chips"><span>Python</span><span>FastAPI</span><span>Django</span><span>Java</span><span>Spring Boot</span><span>Node.js</span><span>REST APIs</span></p></div>
-<div class="card"><h3>Frontend</h3><p class="chips"><span>React.js</span><span>Ionic React</span><span>JavaScript</span><span>HTML</span><span>CSS</span></p></div>
-<div class="card"><h3>Data</h3><p class="chips"><span>PostgreSQL</span><span>MongoDB</span><span>Alembic</span></p></div>
-<div class="card"><h3>AI</h3><p class="chips"><span>LLM fundamentals</span><span>RAG</span><span>LangChain</span><span>LangGraph</span></p></div>
-<div class="card"><h3>Tools &amp; Cloud</h3><p class="chips"><span>Git</span><span>GitHub</span><span>Docker</span><span>AWS fundamentals</span><span>Stripe</span></p></div>
+<section id="skills"><h2 class="rv">Skills</h2><div class="grid skills">
+<div class="card rv"><h3>Backend</h3><p class="chips"><span>Python</span><span>FastAPI</span><span>Django</span><span>Java</span><span>Spring Boot</span><span>Node.js</span><span>REST APIs</span></p></div>
+<div class="card rv"><h3>Frontend</h3><p class="chips"><span>React.js</span><span>Ionic React</span><span>JavaScript</span><span>HTML</span><span>CSS</span></p></div>
+<div class="card rv"><h3>Data</h3><p class="chips"><span>PostgreSQL</span><span>MongoDB</span><span>Alembic</span></p></div>
+<div class="card rv"><h3>AI</h3><p class="chips"><span>LLM fundamentals</span><span>RAG</span><span>LangChain</span><span>LangGraph</span></p></div>
+<div class="card rv"><h3>Tools &amp; Cloud</h3><p class="chips"><span>Git</span><span>GitHub</span><span>Docker</span><span>AWS fundamentals</span><span>Stripe</span></p></div>
 </div></section>
 
-<section id="experience"><h2>Experience</h2>
-<div class="tl"><div class="item"><div class="when">Jun 2026 - Present</div><h3>SDE-1, Full Stack Developer</h3><div class="org">Adifice Technologies</div>
+<section id="experience"><h2 class="rv">Experience</h2>
+<div class="tl"><div class="item rv"><div class="when">Jun 2026 - Present</div><h3>SDE-1, Full Stack Developer</h3><div class="org">Adifice Technologies</div>
 <ul><li>Building backend APIs with FastAPI and PostgreSQL for a real-time mobile golf management platform.</li><li>Building booking, payment, refund and user-management modules integrated with Stripe.</li><li>Working with Alembic migrations, dependency injection and reusable service layers; collaborating with Ionic React developers on REST APIs.</li></ul></div>
-<div class="item"><div class="when">Oct 2025 - May 2026</div><h3>SDE Intern, Full Stack Developer</h3><div class="org">Adifice Technologies</div>
+<div class="item rv"><div class="when">Oct 2025 - May 2026</div><h3>SDE Intern, Full Stack Developer</h3><div class="org">Adifice Technologies</div>
 <ul><li>Contributed to full-stack development with FastAPI, PostgreSQL and Ionic React.</li><li>Developed and tested REST APIs with modular architecture and database-driven workflows.</li><li>Worked through Git feature branches, pull requests and code reviews.</li></ul></div></div></section>
 
-<section id="projects"><h2>Projects</h2><div class="grid proj">
-<article class="card feat"><span class="badge">Live</span><h3>MakeMyMarriage</h3><p>A digital wedding ecosystem web app that I designed, built and deployed.</p><p class="chips"><span>Vite</span><span>Vercel</span></p><a class="link" href="https://make-my-marriage-ebon.vercel.app" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
-<article class="card feat"><span class="badge alt">Full-stack</span><h3>SafeHaven</h3><p>A Spring Boot app where the public uploads photos and locations of people in need, such as roadside beggars, orphans and the elderly, so NGO staff can find them and take them to orphanages and old-age homes.</p><p class="chips"><span>Java</span><span>Spring Boot</span></p><a class="link" href="https://safehaven-six.vercel.app" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
-<article class="card"><h3>Abiozen - Life Science Platform</h3><p>Django REST APIs for product discovery and user workflows, with a PostgreSQL-backed catalog, quality-control testing and order workflows.</p><p class="chips"><span>Django</span><span>PostgreSQL</span><span>HTML</span></p> <a class="link" href="https://www.abiozen.com" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
-<article class="card"><h3>Multi-Agent Research System</h3><p>A research assistant with specialized planning, retrieval, analysis and report-generation agents sharing state, exposed through FastAPI with workflow-based routing.</p><p class="chips"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>LangGraph</span></p><a class="link" href="https://multi-agent-research-system-n9vf.onrender.com" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
+<section id="projects"><h2 class="rv">Projects</h2><div class="grid proj">
+<article class="card rv feat"><span class="badge">Live</span><h3>MakeMyMarriage</h3><p>A digital wedding ecosystem web app that I designed, built and deployed.</p><p class="chips"><span>Vite</span><span>Vercel</span></p><a class="link" href="https://make-my-marriage-ebon.vercel.app" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
+<article class="card rv feat"><span class="badge alt">Full-stack</span><h3>SafeHaven</h3><p>A Spring Boot app where the public uploads photos and locations of people in need, such as roadside beggars, orphans and the elderly, so NGO staff can find them and take them to orphanages and old-age homes.</p><p class="chips"><span>Java</span><span>Spring Boot</span></p><a class="link" href="https://safehaven-six.vercel.app" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
+<article class="card rv"><h3>Abiozen - Life Science Platform</h3><p>Django REST APIs for product discovery and user workflows, with a PostgreSQL-backed catalog, quality-control testing and order workflows.</p><p class="chips"><span>Django</span><span>PostgreSQL</span><span>HTML</span></p> <a class="link" href="https://www.abiozen.com" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
+<article class="card rv"><h3>Multi-Agent Research System</h3><p>A research assistant with specialized planning, retrieval, analysis and report-generation agents sharing state, exposed through FastAPI with workflow-based routing.</p><p class="chips"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>LangGraph</span></p><a class="link" href="https://multi-agent-research-system-n9vf.onrender.com" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
 </div></section>
 
-<section id="education"><h2>Education &amp; achievements</h2><div class="grid skills">
-<div class="card"><h3>B.Tech, Computer Science and Engineering</h3><p>RGUKT, RK Valley<br>Aug 2022 - May 2026 | CGPA 9.0/10</p></div>
-<div class="card"><h3>Pre-University Course</h3><p>RGUKT, RK Valley<br>Oct 2020 - Jul 2022 | CGPA 9.68/10</p></div>
-<div class="card"><h3>Achievements</h3><p>400+ LeetCode problems solved.<br>Top 30% of teams, OpenAI NamasteDev Hackathon.<br>Certifications: Cloud Computing (NPTEL), Deep Learning (IIT Ropar).</p></div>
+<section id="education"><h2 class="rv">Education &amp; achievements</h2><div class="grid skills">
+<div class="card rv"><h3>B.Tech, Computer Science and Engineering</h3><p>RGUKT, RK Valley<br>Aug 2022 - May 2026 | CGPA 9.0/10</p></div>
+<div class="card rv"><h3>Pre-University Course</h3><p>RGUKT, RK Valley<br>Oct 2020 - Jul 2022 | CGPA 9.68/10</p></div>
+<div class="card rv"><h3>Achievements</h3><p>400+ LeetCode problems solved.<br>Top 30% of teams, OpenAI NamasteDev Hackathon.<br>Certifications: Cloud Computing (NPTEL), Deep Learning (IIT Ropar).</p></div>
 </div></section>
 
-<section id="contact" class="contact"><h2>Let's talk</h2><p>I'm open to software engineering roles. Email is the fastest way to reach me.</p>
+<section id="contact" class="contact"><h2 class="rv">Let's talk</h2><p>I'm open to software engineering roles. Email is the fastest way to reach me.</p>
 <div class="cta"><a class="btn" href="mailto:vengamunireddy040404@gmail.com">vengamunireddy040404@gmail.com</a><a class="btn ghost" href="https://www.linkedin.com/in/saribala-venga-muni-reddy-425727305/" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="https://github.com/Venga-Muni-Reddy" target="_blank" rel="noopener">GitHub</a></div>
 <p class="small">Kadapa, Andhra Pradesh, India</p></section>
 </main>
 <footer>&copy; 2026 Saribala Venga Muni Reddy</footer>
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var bar=document.getElementById('bar');
+function sc(){var h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')'}
+addEventListener('scroll',sc,{passive:true});sc();
+// reveal
+var els=[].slice.call(document.querySelectorAll('.rv'));
+els.forEach(function(e,i){var p=e.parentElement;var idx=[].indexOf.call(p.children,e);e.style.setProperty('--d',(idx%4*0.09)+'s')});
+if('IntersectionObserver' in window&&!rm){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add('in')});
+// typing
+var words=['FastAPI + PostgreSQL backends','Stripe payment and refund flows','Spring Boot and React apps','LLM agents with LangGraph','things real people use'],t=document.getElementById('typed'),wi=0,ci=0,del=false;
+if(rm){t.textContent=words[0]}else(function tick(){var w=words[wi];ci+=del?-1:1;t.textContent=w.slice(0,ci);var d=del?28:65;if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=350}setTimeout(tick,d)})();
+// counters
+[].forEach.call(document.querySelectorAll('[data-n]'),function(b){if(rm)return;var n=parseFloat(b.dataset.n),dec=+b.dataset.d||0,s=b.dataset.s||'',st=null;function f(ts){st=st||ts;var p=Math.min((ts-st)/1400,1),e=1-Math.pow(1-p,3);b.textContent=(n*e).toFixed(dec)+(p===1?s:'');if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)});
+// card spotlight + tilt (pointer devices only)
+if(matchMedia('(hover:hover)').matches&&!rm){[].forEach.call(document.querySelectorAll('.card'),function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');if(c.closest('.proj')){c.style.transform='perspective(800px) rotateX('+((.5-y/r.height)*7)+'deg) rotateY('+((x/r.width-.5)*7)+'deg) translateY(-4px)'}});c.addEventListener('pointerleave',function(){c.style.transform=''})})}
+// particles
+var cv=document.getElementById('fx');if(!cv||rm)return;var cx=cv.getContext('2d'),W,H,P=[],run=true,mx=-999,my=-999,dpr=Math.min(devicePixelRatio||1,2);
+function rs(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);var n=Math.round(Math.min(70,W*H/16000));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6})}
+rs();addEventListener('resize',rs);
+cv.parentElement.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run)draw()});
+if('IntersectionObserver' in window)new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!run){run=true;draw()}else if(!v)run=false}).observe(cv.parentElement);
+function draw(){if(!run)return;cx.clearRect(0,0,W,H);for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;var dx=p.x-mx,dy=p.y-my,dd=dx*dx+dy*dy;if(dd<14000){p.x+=dx*.004;p.y+=dy*.004}cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fillStyle='rgba(150,190,255,.8)';cx.fill();for(var j=i+1;j<P.length;j++){var q=P[j],ex=p.x-q.x,ey=p.y-q.y,d=ex*ex+ey*ey;if(d<11000){cx.strokeStyle='rgba(120,160,255,'+(.22*(1-d/11000))+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}}requestAnimationFrame(draw)}
+draw();
+})();
+</script>
 </body></html>
