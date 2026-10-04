@@ -15,6 +15,7 @@ export default async function handler(req, res) {
   if (!timingSafeEqual(sha(given), sha(expected))) {
     return res.status(401).json({ error: 'Wrong code' });
   }
+  if (req.headers['x-check']) return res.status(200).json({ ok: true });
   const chunks = [];
   let size = 0;
   for await (const c of req) {
