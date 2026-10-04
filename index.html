@@ -76,6 +76,9 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 .mdl .msg{min-height:1.2em;font-size:.88rem;margin:0 0 10px;color:var(--c)}.mdl .msg.err{color:#ff7b8a}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);opacity:0;z-index:300;background:#0e1326;border:1px solid var(--c);color:var(--fg);padding:12px 18px;border-radius:12px;font-size:.92rem;max-width:90vw;text-align:center;transition:.35s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:640px){.cta .btn.ghost{width:calc(50% - 7px);padding:12px 8px}}@media(max-width:640px){.nav nav a.navdl{display:none}}
+.demo-row{margin-top:22px;text-align:center}.demo-row .btn{cursor:pointer;font:inherit;font-weight:600}
+.mdl pre{white-space:pre-wrap;word-break:break-word;margin:0 0 14px;padding:12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.04);font:inherit;font-size:.95rem;line-height:1.55;max-height:50vh;overflow:auto;user-select:all}
+.mdl textarea{width:100%;min-height:170px;padding:11px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--fg);font:inherit;font-size:.95rem;margin-bottom:12px;resize:vertical}
 </style></head><body>
 <div id="bar"></div>
 <header class="nav"><a class="logo" href="#top">SVM</a>
@@ -115,7 +118,7 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 <article class="card rv feat"><span class="badge alt">Full-stack</span><h3>SafeHaven</h3><p>A Spring Boot app where the public uploads photos and locations of people in need, such as roadside beggars, orphans and the elderly, so NGO staff can find them and take them to orphanages and old-age homes.</p><p class="chips"><span>Java</span><span>Spring Boot</span></p><a class="link" href="https://safehaven-six.vercel.app" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
 <article class="card rv"><h3>Abiozen - Life Science Platform</h3><p>Django REST APIs for product discovery and user workflows, with a PostgreSQL-backed catalog, quality-control testing and order workflows.</p><p class="chips"><span>Django</span><span>PostgreSQL</span><span>HTML</span></p> <a class="link" href="https://www.abiozen.com" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
 <article class="card rv"><h3>Multi-Agent Research System</h3><p>A research assistant with specialized planning, retrieval, analysis and report-generation agents sharing state, exposed through FastAPI with workflow-based routing.</p><p class="chips"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>LangGraph</span></p><a class="link" href="https://multi-agent-research-system-n9vf.onrender.com" target="_blank" rel="noopener">Visit live site &rarr;</a></article>
-</div></section>
+</div><div class="demo-row rv"><button class="btn ghost dl" id="demobtn" type="button">Demo passwords</button></div></section>
 
 <section id="education"><h2 class="rv">Education &amp; achievements</h2><div class="grid skills">
 <div class="card rv"><h3>B.Tech, Computer Science and Engineering</h3><p>RGUKT, RK Valley<br>Aug 2022 - May 2026 | CGPA 9.0/10</p></div>
@@ -127,8 +130,9 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 <div class="cta"><a class="btn" href="mailto:vengamunireddy040404@gmail.com">vengamunireddy040404@gmail.com</a><a class="btn ghost" href="https://www.linkedin.com/in/saribala-venga-muni-reddy-425727305/" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="https://github.com/Venga-Muni-Reddy" target="_blank" rel="noopener">GitHub</a></div>
 <p class="small">Kadapa, Andhra Pradesh, India</p></section>
 </main>
-<footer>&copy; 2026 Saribala Venga Muni Reddy <button class="upl" id="uplbtn" type="button">Update resume</button></footer>
+<footer>&copy; 2026 Saribala Venga Muni Reddy <button class="upl" id="uplbtn" type="button">Update resume</button> <button class="upl" id="demoupd" type="button">Update demo passwords</button></footer>
 <div class="mdl" id="mdl" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="box"><h3 id="mt">Update resume</h3><p id="mp">Enter the access code to upload a new resume.</p><div id="s1"><input type="password" id="code" placeholder="Access code" autocomplete="off"><div class="msg" id="m1"></div><div class="row"><button class="btn" id="go">Continue</button><button class="btn ghost" data-close>Cancel</button></div></div><div id="s2" hidden><input type="file" id="file" accept="application/pdf,.pdf"><div class="msg" id="m2"></div><div class="row"><button class="btn" id="up">Upload PDF</button><button class="btn ghost" data-close>Close</button></div></div></div></div><div class="toast" id="toast" role="status"></div>
+<div class="mdl" id="dmdl" role="dialog" aria-modal="true" aria-labelledby="dt"><div class="box"><h3 id="dt">Demo passwords</h3><p>For trying the live demos. These are demo accounts only.</p><pre id="dtext">Loading...</pre><div class="row"><button class="btn ghost" data-close>Close</button></div></div></div><div class="mdl" id="emdl" role="dialog" aria-modal="true" aria-labelledby="et"><div class="box"><h3 id="et">Update demo passwords</h3><p id="ep">Enter the access code to edit.</p><div id="e1"><input type="password" id="ecode" placeholder="Access code" autocomplete="off"><div class="msg" id="em1"></div><div class="row"><button class="btn" id="ego">Continue</button><button class="btn ghost" data-close>Cancel</button></div></div><div id="e2" hidden><textarea id="etext" maxlength="4000"></textarea><div class="msg" id="em2"></div><div class="row"><button class="btn" id="esave">Save</button><button class="btn ghost" data-close>Close</button></div></div></div></div>
 <script>
 (function(){
 var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -168,6 +172,19 @@ function say(id,s,err){var n=$(id);n.textContent=s;n.className='msg'+(err?' err'
 function chk(){var c=$('code').value.trim();if(!c)return;say('m1','Checking...');fetch('/api/upload',{method:'POST',headers:{'x-upload-code':c,'x-check':'1'}}).then(function(r){if(!r.ok)throw 0;code=c;$('s1').hidden=true;$('s2').hidden=false;$('mp').textContent='Choose a PDF (max 4 MB). It replaces the current resume.'}).catch(function(){say('m1','Wrong code.',1)})}
 $('go').addEventListener('click',chk);$('code').addEventListener('keydown',function(e){if(e.key==='Enter')chk()});
 $('up').addEventListener('click',function(){var f=$('file').files[0];if(!f){say('m2','Pick a PDF first.',1);return}if(f.size>4*1024*1024){say('m2','File is over 4 MB.',1);return}if(!/\.pdf$/i.test(f.name)&&f.type!=='application/pdf'){say('m2','PDF files only.',1);return}say('m2','Uploading...');fetch('/api/upload',{method:'POST',headers:{'x-upload-code':code,'Content-Type':'application/pdf'},body:f}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j.error||'failed';return j})}).then(function(){close();toast('Resume updated. The Download button now serves it.')}).catch(function(e){say('m2',String(e),1)})});
+})();
+
+(function(){var $=function(i){return document.getElementById(i)},ec='';
+function say(id,s,err){var n=$(id);n.textContent=s;n.className='msg'+(err?' err':'')}
+function shut(){['dmdl','emdl'].forEach(function(i){$(i).classList.remove('open')});ec='';$('ecode').value='';$('e1').hidden=false;$('e2').hidden=true;say('em1','');say('em2','');$('ep').textContent='Enter the access code to edit.'}
+['dmdl','emdl'].forEach(function(i){$(i).addEventListener('click',function(e){if(e.target===$(i)||e.target.hasAttribute('data-close'))shut()})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')shut()});
+function load(){return fetch('/api/demo',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){return j.text||''})}
+$('demobtn').addEventListener('click',function(){$('dtext').textContent='Loading...';$('dmdl').classList.add('open');load().then(function(t){$('dtext').textContent=t||'Nothing here yet.'}).catch(function(){$('dtext').textContent='Could not load. Please try again.'})});
+$('demoupd').addEventListener('click',function(){$('emdl').classList.add('open');$('ecode').focus()});
+function chk(){var c=$('ecode').value.trim();if(!c)return;say('em1','Checking...');fetch('/api/upload',{method:'POST',headers:{'x-upload-code':c,'x-check':'1'}}).then(function(r){if(!r.ok)throw 0;ec=c;return load()}).then(function(t){$('etext').value=t;$('e1').hidden=true;$('e2').hidden=false;$('ep').textContent='Edit what visitors see in the Demo passwords panel.'}).catch(function(){say('em1','Wrong code.',1)})}
+$('ego').addEventListener('click',chk);$('ecode').addEventListener('keydown',function(e){if(e.key==='Enter')chk()});
+$('esave').addEventListener('click',function(){say('em2','Saving...');fetch('/api/demo',{method:'POST',headers:{'x-upload-code':ec,'Content-Type':'application/json'},body:JSON.stringify({text:$('etext').value})}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j.error||'failed';return j})}).then(function(){shut();var t=$('toast');t.textContent='Demo passwords updated.';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3200)}).catch(function(e){say('em2',String(e),1)})});
 })();
 </script>
 </body></html>
