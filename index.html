@@ -64,17 +64,29 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 .scroll{display:none!important}.hero{min-height:0!important;height:auto!important}@media(min-width:901px){.hero{padding:130px 0 90px}}
 .livebar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;color:var(--mut);font-size:.9rem;margin:-14px 0 26px}.livebar a{color:var(--c);text-decoration:none;border-bottom:1px dashed rgba(53,224,194,.5);transition:color .2s}.livebar a:hover{color:#fff}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+.btn.dl{border-color:var(--c);color:var(--c)}.btn.dl:hover{background:rgba(53,224,194,.1);border-color:var(--c)}
+.nav nav a.navdl{border:1px solid var(--c);color:var(--c);padding:5px 12px;border-radius:999px}
+.upl{background:none;border:0;color:var(--mut);font:inherit;text-decoration:underline;cursor:pointer;padding:4px 8px;opacity:.75}.upl:hover{color:var(--fg);opacity:1}
+.mdl{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(5,7,16,.78);backdrop-filter:blur(6px)}.mdl.open{display:flex}
+.mdl .box{width:100%;max-width:380px;background:#0e1326;border:1px solid var(--bd);border-radius:16px;padding:22px;text-align:left}
+.mdl h3{margin:0 0 6px;font-size:1.15rem}.mdl p{margin:0 0 14px;color:var(--mut);font-size:.9rem}
+.mdl input[type=password],.mdl input[type=file]{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--fg);font:inherit;margin-bottom:12px}
+.mdl .row{display:flex;gap:10px}.mdl .row .btn{flex:1;text-align:center;cursor:pointer;border:0;font:inherit;font-weight:600;padding:11px 14px}.mdl .row .btn.ghost{border:1px solid var(--bd)}
+.mdl .msg{min-height:1.2em;font-size:.88rem;margin:0 0 10px;color:var(--c)}.mdl .msg.err{color:#ff7b8a}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);opacity:0;z-index:300;background:#0e1326;border:1px solid var(--c);color:var(--fg);padding:12px 18px;border-radius:12px;font-size:.92rem;max-width:90vw;text-align:center;transition:.35s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:640px){.nav nav a.navdl{display:none}}
 </style></head><body>
 <div id="bar"></div>
 <header class="nav"><a class="logo" href="#top">SVM</a>
-<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav></header>
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="navdl" id="dl2" href="/api/resume">Resume</a></nav></header>
 <main id="top">
 <section class="hero"><canvas id="fx" aria-hidden="true"></canvas>
 <p class="eyebrow">Hi, I'm</p>
 <h1><span class="grad">Saribala Venga Muni Reddy</span></h1>
 <p class="typed">I build <span id="typed"></span><i class="caret"></i></p>
 <p class="tag">Full-stack software engineer building backend APIs, payments and AI-powered apps with Python, Java and React.</p>
-<div class="cta"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+<div class="cta"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Get in touch</a><a class="btn ghost dl" id="dl1" href="/api/resume">Download resume</a></div>
 <p class="livebar">Live projects: <a href="https://make-my-marriage-ebon.vercel.app" target="_blank" rel="noopener">MakeMyMarriage</a><a href="https://safehaven-six.vercel.app" target="_blank" rel="noopener">SafeHaven</a><a href="https://www.abiozen.com" target="_blank" rel="noopener">Abiozen</a><a href="https://multi-agent-research-system-n9vf.onrender.com" target="_blank" rel="noopener">Multi-Agent</a></p>
 <ul class="stats"><li><b data-n="9.0" data-d="1">9.0</b><span>B.Tech CGPA</span></li><li><b data-n="400" data-s="+">400+</b><span>LeetCode solved</span></li><li><b>SDE-1</b><span>Adifice Technologies</span></li></ul>
 <a class="scroll" href="#about" aria-label="Scroll down"><span></span></a>
@@ -115,7 +127,7 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 <div class="cta"><a class="btn" href="mailto:vengamunireddy040404@gmail.com">vengamunireddy040404@gmail.com</a><a class="btn ghost" href="https://www.linkedin.com/in/saribala-venga-muni-reddy-425727305/" target="_blank" rel="noopener">LinkedIn</a><a class="btn ghost" href="https://github.com/Venga-Muni-Reddy" target="_blank" rel="noopener">GitHub</a></div>
 <p class="small">Kadapa, Andhra Pradesh, India</p></section>
 </main>
-<footer>&copy; 2026 Saribala Venga Muni Reddy</footer>
+<footer>&copy; 2026 Saribala Venga Muni Reddy <button class="upl" id="uplbtn" type="button">Update resume</button></footer>
 <script>
 (function(){
 var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -143,5 +155,19 @@ if('IntersectionObserver' in window)new IntersectionObserver(function(es){var v=
 function draw(){if(!run)return;cx.clearRect(0,0,W,H);for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;var dx=p.x-mx,dy=p.y-my,dd=dx*dx+dy*dy;if(dd<14000){p.x+=dx*.004;p.y+=dy*.004}cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fillStyle='rgba(150,190,255,.8)';cx.fill();for(var j=i+1;j<P.length;j++){var q=P[j],ex=p.x-q.x,ey=p.y-q.y,d=ex*ex+ey*ey;if(d<11000){cx.strokeStyle='rgba(120,160,255,'+(.22*(1-d/11000))+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}}requestAnimationFrame(draw)}
 draw();
 })();
+
+(function(){var $=function(i){return document.getElementById(i)},t=$('toast'),tm;function toast(s){t.textContent=s;t.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('show')},3600)}
+function dl(e){e.preventDefault();fetch('/api/resume',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){var u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='Venga_Muni_Reddy_Resume.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000)}).catch(function(){toast('Resume is being added - please check back soon, or reach out by email.')})}
+['dl1','dl2'].forEach(function(i){var a=$(i);if(a)a.addEventListener('click',dl)});
+var m=$('mdl'),code='';function close(){m.classList.remove('open');code='';$('code').value='';$('file').value='';$('s1').hidden=false;$('s2').hidden=true;$('m1').textContent='';$('m2').textContent=''}
+$('uplbtn').addEventListener('click',function(){m.classList.add('open');$('code').focus()});
+m.addEventListener('click',function(e){if(e.target===m||e.target.hasAttribute('data-close'))close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+function say(id,s,err){var n=$(id);n.textContent=s;n.className='msg'+(err?' err':'')}
+function chk(){var c=$('code').value.trim();if(!c)return;say('m1','Checking...');fetch('/api/upload',{method:'POST',headers:{'x-upload-code':c,'x-check':'1'}}).then(function(r){if(!r.ok)throw 0;code=c;$('s1').hidden=true;$('s2').hidden=false;$('mp').textContent='Choose a PDF (max 4 MB). It replaces the current resume.'}).catch(function(){say('m1','Wrong code.',1)})}
+$('go').addEventListener('click',chk);$('code').addEventListener('keydown',function(e){if(e.key==='Enter')chk()});
+$('up').addEventListener('click',function(){var f=$('file').files[0];if(!f){say('m2','Pick a PDF first.',1);return}if(f.size>4*1024*1024){say('m2','File is over 4 MB.',1);return}if(!/\.pdf$/i.test(f.name)&&f.type!=='application/pdf'){say('m2','PDF files only.',1);return}say('m2','Uploading...');fetch('/api/upload',{method:'POST',headers:{'x-upload-code':code,'Content-Type':'application/pdf'},body:f}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j.error||'failed';return j})}).then(function(){close();toast('Resume updated. The Download button now serves it.')}).catch(function(e){say('m2',String(e),1)})});
+})();
 </script>
+<div class="mdl" id="mdl" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="box"><h3 id="mt">Update resume</h3><p id="mp">Enter the access code to upload a new resume.</p><div id="s1"><input type="password" id="code" placeholder="Access code" autocomplete="off"><div class="msg" id="m1"></div><div class="row"><button class="btn" id="go">Continue</button><button class="btn ghost" data-close>Cancel</button></div></div><div id="s2" hidden><input type="file" id="file" accept="application/pdf,.pdf"><div class="msg" id="m2"></div><div class="row"><button class="btn" id="up">Upload PDF</button><button class="btn ghost" data-close>Close</button></div></div></div></div><div class="toast" id="toast" role="status"></div>
 </body></html>
