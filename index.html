@@ -44,7 +44,7 @@ p{color:#c5cde6}#about p{margin-bottom:14px;max-width:760px}
 .card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(110,168,255,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
 .card:hover{border-color:rgba(110,168,255,.55);box-shadow:0 20px 50px -20px rgba(110,168,255,.5)}.card:hover:before{opacity:1}
 .card h3{font-size:1.12rem;margin-bottom:10px;color:#fff;position:relative}.card p{position:relative}
-.proj .card{display:flex;flex-direction:column;gap:12px}.proj .card p{flex:1 1 auto}
+.proj .card{display:flex;flex-direction:column;gap:12px}.proj .card>p:not(.chips){flex:1 1 auto}.proj{grid-template-columns:repeat(2,minmax(0,1fr))}.chips{align-items:flex-start}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{padding:5px 12px;border-radius:99px;font-size:.82rem;background:rgba(110,168,255,.1);border:1px solid var(--bd);color:#cfdcff;transition:transform .25s,background .25s,border-color .25s}
 .chips span:hover{transform:translateY(-3px) scale(1.06);background:rgba(179,107,255,.2);border-color:var(--b)}
@@ -59,7 +59,7 @@ p{color:#c5cde6}#about p{margin-bottom:14px;max-width:760px}
 footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(--bd);font-size:.88rem}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
 .card.rv.in{transition:opacity .8s ease var(--d,0s),transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
-@media(max-width:640px){.nav{padding:10px 4vw}.nav nav{gap:13px}.nav nav a{font-size:.8rem}.nav nav a[href="#about"],.nav nav a[href="#skills"]{display:none}section{padding-top:64px}.hero{padding-top:90px}.scroll{display:none}.stats li{flex:1 1 40%;padding:12px 14px}.item:before{left:-33px}.btn{width:100%;text-align:center}.tl{padding-left:20px}.item:hover{transform:none}}
+@media(max-width:640px){.proj{grid-template-columns:1fr}.nav{padding:10px 4vw}.nav nav{gap:13px}.nav nav a{font-size:.8rem}.nav nav a[href="#about"],.nav nav a[href="#skills"]{display:none}section{padding-top:64px}.hero{padding-top:90px}.scroll{display:none}.stats li{flex:1 1 40%;padding:12px 14px}.item:before{left:-33px}.btn{width:100%;text-align:center}.tl{padding-left:20px}.item:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style></head><body>
 <div id="bar"></div>
