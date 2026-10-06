@@ -79,10 +79,28 @@ footer{text-align:center;padding:26px;color:var(--mut);border-top:1px solid var(
 .demo-row{margin-top:22px;text-align:center}.demo-row .btn{cursor:pointer;font:inherit;font-weight:600}
 .mdl pre{white-space:pre-wrap;word-break:break-word;margin:0 0 14px;padding:12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.04);font:inherit;font-size:.95rem;line-height:1.55;max-height:50vh;overflow:auto;user-select:all}
 .mdl textarea{width:100%;min-height:170px;padding:11px 12px;border-radius:10px;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--fg);font:inherit;font-size:.95rem;margin-bottom:12px;resize:vertical}
+
+/* mobile drawer, logo, back-to-top */
+.logo{display:inline-flex;align-items:center;gap:9px}.logo svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 8px rgba(110,168,255,.35))}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--bd);border-radius:12px;background:rgba(18,24,48,.6);cursor:pointer;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:20px;height:2px;border-radius:2px;background:#e8ecff;transition:transform .3s,opacity .3s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}.burger[aria-expanded="true"] span:nth-child(2){opacity:0}.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(78vw,300px);z-index:90;background:rgba(8,12,26,.97);border-left:1px solid var(--bd);padding:84px 26px 30px;display:flex;flex-direction:column;gap:6px;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+#drawer.open{transform:none;visibility:visible}
+#drawer a{color:#e8ecff;text-decoration:none;font-size:1.05rem;padding:14px 8px;border-bottom:1px solid var(--bd)}
+#drawer a.dres{margin-top:18px;border:1px solid var(--c);color:var(--c);border-radius:999px;text-align:center}
+#dback{position:fixed;inset:0;z-index:80;background:rgba(2,4,12,.6);opacity:0;pointer-events:none;transition:opacity .3s}#dback.open{opacity:1;pointer-events:auto}
+.nav{z-index:95}
+#totop{position:fixed;right:18px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--bd);background:linear-gradient(135deg,var(--a),var(--b));color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .3s;box-shadow:0 8px 24px rgba(110,168,255,.3)}
+#totop.show{opacity:1;transform:none;pointer-events:auto}#totop svg{width:20px;height:20px}
+@media(max-width:640px){.nav nav{display:none}.burger{display:flex}}
+@media(min-width:641px){#drawer,#dback{display:none}}
 </style></head><body>
 <div id="bar"></div>
-<header class="nav"><a class="logo" href="#top">SVM</a>
-<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="navdl" id="dl2" href="/api/resume">Resume</a></nav></header>
+<header class="nav"><a class="logo" href="#top" aria-label="Home"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6ea8ff"/><stop offset=".55" stop-color="#b36bff"/><stop offset="1" stop-color="#35e0c2"/></linearGradient></defs><rect x="1.5" y="1.5" width="29" height="29" rx="9" fill="rgba(18,24,48,.7)" stroke="url(#lg)" stroke-width="1.6"/><path d="M8.5 9.5 L16 23 L23.5 9.5" fill="none" stroke="url(#lg)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7.2" r="1.5" fill="#35e0c2"/></svg><span>SVM</span></a>
+<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="navdl" id="dl2" href="/api/resume">Resume</a></nav><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button></header>
+<div id="dback"></div><aside id="drawer" aria-label="Menu"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a class="dres" id="dl3" href="/api/resume">Resume</a></aside>
+<button id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <main id="top">
 <section class="hero"><canvas id="fx" aria-hidden="true"></canvas>
 <p class="eyebrow">Hi, I'm</p>
@@ -189,4 +207,11 @@ $('ego').addEventListener('click',chk);$('ecode').addEventListener('keydown',fun
 $('esave').addEventListener('click',function(){say('em2','Saving...');fetch('/api/demo',{method:'POST',headers:{'x-upload-code':ec,'Content-Type':'application/json'},body:JSON.stringify({text:$('etext').value})}).then(function(r){return r.json().then(function(j){if(!r.ok)throw j.error||'failed';return j})}).then(function(){shut();var t=$('toast');t.textContent='Demo passwords updated.';t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3200)}).catch(function(e){say('em2',String(e),1)})});
 })();
 </script>
+<script>(function(){var b=document.getElementById('burger'),d=document.getElementById('drawer'),k=document.getElementById('dback'),t=document.getElementById('totop');
+function set(o){d.classList.toggle('open',o);k.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+b.addEventListener('click',function(){set(!d.classList.contains('open'))});k.addEventListener('click',function(){set(false)});
+d.addEventListener('click',function(e){if(e.target.tagName==='A')set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+var d3=document.getElementById('dl3'),d2=document.getElementById('dl2');if(d3&&d2)d3.addEventListener('click',function(e){e.preventDefault();d2.click()});
+function sc(){t.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>300)}window.addEventListener('scroll',sc,{passive:true});sc();
+t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});})();</script>
 </body></html>
