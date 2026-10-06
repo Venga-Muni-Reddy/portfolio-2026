@@ -1,6 +1,7 @@
 import { get } from '@vercel/blob';
 
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin','https://venga-muni-reddy.github.io');res.setHeader('Access-Control-Allow-Headers','x-upload-code,x-check,content-type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');if(req.method==='OPTIONS')return res.status(204).end();
   res.setHeader('Cache-Control', 'no-store');
   let result = null;
   try {
