@@ -7,6 +7,7 @@ const MAX = 4 * 1024 * 1024;
 const sha = (s) => createHash('sha256').update(String(s).trim().toLowerCase()).digest();
 
 export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin','https://venga-muni-reddy.github.io');res.setHeader('Access-Control-Allow-Headers','x-upload-code,x-check,content-type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');if(req.method==='OPTIONS')return res.status(204).end();
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
   const expected = process.env.UPLOAD_CODE;
